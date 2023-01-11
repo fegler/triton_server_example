@@ -1,0 +1,29 @@
+name: "postprocessing" 
+backend: "python" 
+
+input [
+    {
+        name: "INPUT__0"
+        data_type: TYPE_FP32 
+        dims: [-1, -1]
+    }
+]
+
+output [
+    {
+        name: "result" 
+        data_type: TYPE_STRING 
+        dims: [-1]
+    }
+]
+
+parameters: {
+    key: "EXECUTION_ENV_PATH",
+    value: {string_value: "$$TRITON_MODEL_DIRECTORY/post_env.tar.gz"}
+}
+
+instance_group [
+    {
+        kind: KIND_CPU
+    }
+]
