@@ -13,7 +13,7 @@ jobs:
     steps:
       - name: Setup conda environment
         run: |
-          conda init zsh 
+          conda init
           conda activate triton_example
 
       - name: Run a one-line script
