@@ -11,10 +11,10 @@ jobs:
     runs-on: ["self-hosted", "macOS", "ARM64"]
 
     steps:
-      - name: Setup conda environment
-        run: |
-          conda init
-          conda activate triton_example
-
       - name: Run a one-line script
         run: echo Hello, world!
+
+      - name: Run python file in git repo
+        run: |
+          cd /Users/djyun/project/triton_server_example
+          python3 temp.py
