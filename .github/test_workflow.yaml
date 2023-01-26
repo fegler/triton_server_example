@@ -1,0 +1,25 @@
+
+name: test_workflow
+
+on:
+  push:
+    branches: [ "test" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+
+    runs-on: ['self-hosted', 'macOS', 'ARM64']
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Python 3.7
+      uses: actions/setup-python@v3
+      with:
+        python-version: "3.7"
+    - name: Install dependencies
+      run: |
+        conda activate triton_example
+    - name: Run a one-line script 
+      run: echo Hello, world!
