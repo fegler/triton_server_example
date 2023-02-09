@@ -24,7 +24,7 @@ ensemble_scheduling {
             model_version: -1, 
             input_map {
                 key: "image",
-                value: "image 
+                value: "image" 
             },
             output_map {
                 key: "input_image",
